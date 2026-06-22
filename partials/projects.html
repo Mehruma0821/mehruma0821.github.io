@@ -1,0 +1,150 @@
+<div class="container">
+  <p class="section__eyebrow">04 / Projects</p>
+  <h2 class="section__title">Selected work</h2>
+
+  <article class="featured-project">
+    <div class="featured-project__media">
+      <img src="assets/img/projects/lrs2-portal-1.png" alt="LRS2 Lip-Reading Database search portal showing filters for keyword, size category, homophones, dataset split and duration" loading="lazy">
+      <img src="assets/img/projects/lrs2-portal-2.png" alt="LRS2 Lip-Reading Database search results listing matching video transcripts with duration, word count and size" loading="lazy">
+    </div>
+    <div class="featured-project__body">
+      <span class="featured-project__badge">Featured Project</span>
+      <h3>LRS2 Lip-Reading Database &amp; Web Portal</h3>
+      <p class="featured-project__role">Solo Developer &amp; Researcher &middot; Supervised by Dr. Daqing Chen, London South Bank University</p>
+      <p class="about__text">
+        A full-stack data engineering project that turns the raw LRS2 lip-reading video corpus &mdash; 144,483 video
+        clips with no structured way to search or analyse them &mdash; into a searchable, publicly accessible
+        research database supporting lip-reading and homophone-disambiguation research.
+      </p>
+
+      <div class="featured-stats">
+        <div class="featured-stat"><span>144,483</span><label>video clips processed</label></div>
+        <div class="featured-stat"><span>41,427</span><label>unique words indexed</label></div>
+        <div class="featured-stat"><span>2.06M</span><label>timing annotations</label></div>
+        <div class="featured-stat"><span>49.6GB</span><label>source video corpus</label></div>
+        <div class="featured-stat"><span>18</span><label>relational DB tables</label></div>
+        <div class="featured-stat"><span>0</span><label>extraction errors</label></div>
+      </div>
+
+      <div class="featured-blocks">
+        <div class="featured-block">
+          <h4>Database Design</h4>
+          <p>Designed an 18-table relational schema (ERD) modelling videos, words, homophones, visemes, phonemes and speakers. Captures viseme groups (lip shapes shared by multiple phonemes, e.g. B/M/P) and homophone pairs &mdash; the core ambiguity problem in lip-reading AI.</p>
+        </div>
+        <div class="featured-block">
+          <h4>Data Pipeline</h4>
+          <p>Python extraction pipeline processed all 144,483 raw transcript files with zero errors, verified against an independent 48,164-sentence reference set. Tagged 37,472 videos containing homophones and migrated 2.4M+ rows (464MB) into SQL Server.</p>
+        </div>
+        <div class="featured-block">
+          <h4>Web Application</h4>
+          <p>Flask portal with multi-filter search (keyword, duration, dataset split, homophone presence, size), paginated results, and detail pages with word-by-word homophone highlighting. On-demand FFmpeg transcoding (MPEG-4 &rarr; H.264) with range-request video streaming.</p>
+        </div>
+        <div class="featured-block">
+          <h4>Cloud Migration &amp; Deployment</h4>
+          <p>Migrated the database from SQL Server to PostgreSQL (Neon) and deployed to Render with environment-based config. Two-tier architecture: a full local version with video playback, and a lightweight public version &mdash; a deliberate scope decision around hosting 49.6GB of video on free infrastructure.</p>
+        </div>
+      </div>
+
+      <div class="tag-list featured-project__tags">
+        <span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQL Server</span><span class="tag">PostgreSQL</span><span class="tag">FFmpeg</span><span class="tag">Jinja2</span><span class="tag">Git/GitHub</span><span class="tag">Render</span><span class="tag">Neon</span>
+      </div>
+
+      <div class="project-card__links">
+        <a href="https://lrs2-database-portal.onrender.com" target="_blank" rel="noopener" class="btn btn--primary">Live Demo &#8599;</a>
+      </div>
+    </div>
+  </article>
+
+  <h3 class="projects__subheading">More Projects</h3>
+  <div class="projects__grid" id="projectsGrid">
+
+    <article class="project-card project-card--media">
+      <div class="project-card__media">
+        <img src="assets/img/projects/sales-dashboard-1.png" alt="Classic Model Sales Dashboard built in Power BI showing net profit by product line, office and customer country" loading="lazy">
+      </div>
+      <div class="project-card__head">
+        <h3>Classic Model Sales Dashboard</h3>
+        <span class="project-card__year">2024</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Power BI</span><span class="tag">SQL / MySQL</span><span class="tag">DAX</span>
+      </div>
+      <ul>
+        <li>Built a 2-page Power BI dashboard on a sales database (326 orders) surfacing $9.6M total sales and a $29.46K average order value.</li>
+        <li>Visualised net profit by product line, sales office and customer country with bar, donut and scatter visuals.</li>
+        <li>Added a decomposition tree and a Sales Overview table with month-over-month % change and running year-to-date totals for trend drill-down.</li>
+      </ul>
+      <div class="project-card__links">
+        <a href="#" class="link-disabled" title="Link coming soon">Live Demo</a>
+        <a href="#" class="link-disabled" title="Link coming soon">Source</a>
+      </div>
+    </article>
+
+    <article class="project-card project-card--media">
+      <div class="project-card__media">
+        <img src="assets/img/projects/pentest-brainpan.png" alt="Terminal screenshot of the Brainpan II access-code prompt reached during the penetration test" loading="lazy">
+      </div>
+      <div class="project-card__head">
+        <h3>Penetration Test: Brainpan II</h3>
+        <span class="project-card__year">2025</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Kali Linux</span><span class="tag">Nmap</span><span class="tag">Nessus</span><span class="tag">Python</span>
+      </div>
+      <ul>
+        <li>Ran a full black-box-to-root penetration test on the Brainpan II VM in a GNS3-simulated network, following Information Gathering &rarr; Scanning &rarr; Enumeration &rarr; Exploitation &rarr; Post-Exploitation.</li>
+        <li>Used Netdiscover and Nmap (SYN scans, service/OS detection) plus Nessus to find the target and its open ports, then wrote a Python socket script to brute-force a 4-digit access token on port 1337.</li>
+        <li>Gained full root access, confirmed via the system's proof file, and documented 6 vulnerability categories (weak auth, predictable tokens, SUID misconfig, unencrypted services) with concrete mitigations.</li>
+      </ul>
+      <div class="project-card__links">
+        <a href="#" class="link-disabled" title="Link coming soon">Live Demo</a>
+        <a href="#" class="link-disabled" title="Link coming soon">Source</a>
+      </div>
+    </article>
+
+    <article class="project-card project-card--media">
+      <div class="project-card__media">
+        <img src="assets/img/projects/bromley-clusters.png" alt="Scatter plot of K-Means accident clusters across Bromley by longitude and latitude" loading="lazy">
+      </div>
+      <div class="project-card__head">
+        <h3>Bromley Accident Analysis</h3>
+        <span class="project-card__year">2024</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Python</span><span class="tag">scikit-learn</span><span class="tag">K-Means</span><span class="tag">Decision Trees</span>
+      </div>
+      <ul>
+        <li>Cleaned and explored 4,352 traffic accident records for the London Borough of Bromley (filtered from a 145k-row London-wide dataset), handling missing values, outliers and class imbalance across 21 attributes.</li>
+        <li>Built K-Means/K-Prototypes clustering to surface accident hotspots by location, weather/road-surface conditions and junction type, plus decision tree classifiers predicting accident severity.</li>
+        <li>Identified a high-risk cluster near Barking/Dagenham (mean 2.41 casualties per accident) and translated the findings into road-safety recommendations.</li>
+      </ul>
+      <div class="project-card__links">
+        <a href="#" class="link-disabled" title="Link coming soon">Live Demo</a>
+        <a href="#" class="link-disabled" title="Link coming soon">Source</a>
+      </div>
+    </article>
+
+    <article class="project-card project-card--media">
+      <div class="project-card__media">
+        <img src="assets/img/projects/netflix-dashboard-1.png" alt="Netflix content analytics dashboard built in Power BI showing shows added by date, ratings, top genres and countries available" loading="lazy">
+      </div>
+      <div class="project-card__head">
+        <h3>Netflix Content Analytics Dashboard</h3>
+        <span class="project-card__year">2024</span>
+      </div>
+      <div class="tag-list">
+        <span class="tag">Power BI</span><span class="tag">Data Cleaning</span>
+      </div>
+      <ul>
+        <li>Modelled and visualised a Netflix titles dataset to explore catalogue growth, ratings mix, and genre distribution.</li>
+        <li>Built an area chart of shows added by year (movies vs. TV shows), a ratings breakdown, and a Top 10 genres ranking.</li>
+        <li>Added a world map and slicers (title, release year, director, cast) for interactive drill-down by title.</li>
+      </ul>
+      <div class="project-card__links">
+        <a href="#" class="link-disabled" title="Link coming soon">Live Demo</a>
+        <a href="#" class="link-disabled" title="Link coming soon">Source</a>
+      </div>
+    </article>
+
+  </div>
+</div>
