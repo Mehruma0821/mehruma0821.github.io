@@ -14,6 +14,16 @@ document.addEventListener('includes:loaded', () => {
     link.addEventListener('click', () => navLinks.classList.remove('is-open'));
   });
 
+  // Smooth-scroll to in-page sections without adding #hash to the URL
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener('click', (e) => {
+      const target = document.querySelector(link.getAttribute('href'));
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
   // Fade-in sections on scroll
   const revealEls = document.querySelectorAll('.section, .hero');
   const revealObserver = new IntersectionObserver((entries) => {
