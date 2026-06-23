@@ -568,12 +568,14 @@ a.contact-row:hover { background: var(--surface-2); }
 .footer { border-top: 1px solid var(--border); padding: 26px 0; }
 .footer__inner {
   display: flex;
+  align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 10px;
   font-size: 0.82rem;
   color: var(--text-faint);
 }
+.visit-badge { display: block; height: 20px; border-radius: 3px; flex-shrink: 0; }
 
 /* ---------- Responsive ---------- */
 @media (max-width: 880px) {
